@@ -1,0 +1,50 @@
+https://f0168274@david-pyritz.developerakademie.net/JoinVersion2/Join/pages/add_tasks.html
+
+https://f0168274@david-pyritz.developerakademie.net/JoinVersion2/Join/pages/summary.html
+
+
+    .urgentDateDeadline {
+        display: flex;
+        justify-content: space-around;
+        width: 80vw; /* Verkleinert die Breite */
+        max-width: 500px; /* Setzt eine maximale Breite */
+        height: 100%;
+        margin: 0 auto; /* Zentriert das Element */
+        border-radius: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+
+    }
+
+
+
+addTaskInput = {
+    title: 'title-input',
+    content: 'textarea-content',
+    assignedTO: 'assigned-to-input',
+    date: 'date-input',
+    prio: 'prio-button',
+    category: 'category-dropdown',
+    subtasks: ['first subtask', 'secondSubtask']
+}
+
+700 - 1300 Pixel das was wir mit Paul gemacht haben
+
+js doc
+
+alles auf a tag ändern weil der gesamt container klickbar sein muss wegen,
+Weiterleitung auf Board
+
+<div class="belowHeadlineContent">
+        <div class="leftSide">
+          <div class="toDoDone">
+            <a class="To-do">
+              <div class="writeTo-Do">
+                <img class="rootPicFrame" src="../assets/img/frameWrite.png" alt="rootPicFrame">
+                <img class="hoverPicFrame" src="../assets/img/frameWriteWhite.png" alt="hoverPicFrame">
+              </div>
+              <div class="writeNumberTo-Do">
+                <div class="zeroDone">0</div>
+                <div class="onlyDone">To-Do</div>
+              </div>
+            </a>

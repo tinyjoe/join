@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Signup</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/join_logo_white.svg"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
+
+    <script src="../js/login.js"></script>
+    <script src="../js/signup.js"></script>
+    <script src="../js/add_contact.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/user_database.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <img class="main-logo" src="../assets/img/join_logo_grey.svg" />
+      <div class="login-card">
+        <div class="card-header">
+          <div
+            class="signup-back-nav"
+            onclick="window.location.href='../pages/login.html'"
+          >
+            <img src="../assets/icons/arrow-left-line.svg" />
+          </div>
+          <div>
+            <h2>Sign up</h2>
+            <hr />
+          </div>
+          <div class="signup-back-nav"></div>
+        </div>
+        <form id="signup-form" class="login-form">
+          <div class="icon-input-field">
+            <input
+              id="signup-name"
+              type="text"
+              placeholder="Name"
+              maxlength="30"
+            />
+            <img class="input-icon" src="../assets/icons/person-grey.svg" />
+          </div>
+          <div>
+            <div class="icon-input-field">
+              <input
+                id="signup-mail"
+                type="email"
+                placeholder="Email"
+                maxlength="30"
+                onkeyup="validateSignupEmail()"
+              />
+              <img class="input-icon" src="../assets/icons/mail-grey.svg" />
+            </div>
+            <p id="signup-mail-error" class="error-text hidden">
+              Please enter a valid email address.
+            </p>
+          </div>
+          <div class="icon-input-field">
+            <input
+              id="signup-password"
+              type="password"
+              placeholder="Password"
+              onfocus="showVisibilityIcon('password-icon')"
+              maxlength="30"
+              minlength="8"
+            />
+            <img
+              id="password-icon"
+              class="input-icon"
+              src="../assets/icons/lock.svg"
+              onclick="showPassword('password-icon', 'signup-password')"
+            />
+          </div>
+          <div>
+            <div class="icon-input-field">
+              <input
+                id="signup-password-confirm"
+                type="password"
+                placeholder="Confirm Password"
+                onfocus="showVisibilityIcon('confirm-password-icon')"
+                onkeyup="isPasswordSame()"
+                aria-errormessage="Your passwords don't match. Please try again."
+                maxlength="30"
+                minlength="8"
+              />
+              <img
+                id="confirm-password-icon"
+                class="input-icon input-default"
+                src="../assets/icons/lock.svg"
+                onclick="showPassword('confirm-password-icon', 'signup-password-confirm')"
+              />
+            </div>
+            <p id="signup-error-message" class="error-text hidden">
+              Your passwords don't match. Please try again.
+            </p>
+          </div>
+          <div class="input-checkbox" onclick="checkPrivacyPolicy()">
+            <img
+              id="privacy-checkbox"
+              class="default-cb"
+              src="../assets/icons/default.svg"
+            />
+            <img
+              id="privacy-checkbox-hover"
+              class="hover-cb"
+              src="../assets/icons/hover_default.svg"
+            />
+            <p class="small-print">
+              I accept the <a href="./legal_notice.html">Privacy policy</a>
+            </p>
+          </div>
+          <button
+            type="submit"
+            id="sign-up-button"
+            class="btn-filled-medium"
+            onclick="validateAndSignupUser(event, '../pages/login.html')"
+          >
+            Sign up
+          </button>
+        </form>
+      </div>
+      <div class="login-legal">
+        <p
+          class="small-text-button"
+          onclick="window.location.href='./privacy_policy.html'"
+        >
+          Privacy Policy
+        </p>
+        <p
+          class="small-text-button"
+          href="'./legal_notice.html'"
+          onclick="window.location.href='./legal_notice.html'"
+        >
+          Legal notice
+        </p>
+      </div>
+      <div id="signup-message" class="signup-message">
+        <p class="contacts-info-hl">You signed Up successfully</p>
+      </div>
+    </main>
+  </body>
+</html>

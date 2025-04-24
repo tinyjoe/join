@@ -1,0 +1,190 @@
+@media (max-width: 1320px) {
+    .belowHeadlineContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    p {
+        margin: 0px;
+        font-size: 15px !important;
+    }
+
+    .headlineContent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        padding: 20px 0px;
+        margin-left: 0px;
+    }
+
+    h1 {
+        font-size: 47px;
+        margin: 0px;
+        margin-right: 20px;
+    }
+
+    .metricsAtGlance {
+        font-size: 20px;
+    }
+
+    .seperator1 {
+        display: none;
+    }
+
+    .sepMobile {
+        display: flex;
+        background-color: #29abe2;
+        margin-right: 110px;
+    }
+
+    .left-sidebar {
+        height: fit-content !important;
+        min-height: 20px;
+    }
+
+    .rightSide {
+        display: none;
+    }
+
+    .To-do,
+    .done {
+        width: fit-content;
+        height: 90px;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hoverPicDone {
+        width: 10px;
+    }
+
+    .rootPicFrame,
+    .hoverPicFrame,
+    .rootPicDone,
+    .hoverPicDone {
+        width: 32px;
+        height: 32px;
+    }
+
+    .leftSide {
+        max-width: 100vw;
+        height: 100%;
+        width: 100%;
+    }
+
+    .toDoDone,
+    .urgentDateDeadline,
+    .taskBoardProgressFeedback {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100vw;
+        height: 100%;
+        gap: 0px;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .tasksInBoard,
+    .taskInProgress,
+    .awaitingFeedback {
+        width: fit-content;
+        height: 68px;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .writeTo-Do,
+    .doneOk {
+        width: 32px;
+        height: 32px;
+        margin-left: 0px;
+    }
+
+    .urgentDateDeadline {
+        display: flex;
+        justify-content: space-around;
+        max-width: 100vw;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .dateSummary {
+        font-size: 16px;
+    }
+
+    .onlyDone,
+    .upComingSummary {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .urgentSummary {
+        width: fit-content;
+    }
+
+    .upComing-Deadline {
+        width: fit-content;
+    }
+
+    .urgentSummaryPic img {
+        width: 32px;
+        height: 32px;
+        margin-left: 0px;
+    }
+
+    .urgentSummaryPic {
+        margin-left: 0px;
+    }
+
+    .zeroDone {
+        font-size: 32px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-content-wrapper {
+        max-width: calc(100vw - 40px);
+        margin: 0 auto;
+    }
+
+    .headlineContent {
+        max-width: calc(100vw - 40px);
+        align-items: flex-start;
+    }
+
+    .toDoDone,
+    .urgentDateDeadline,
+    .taskBoardProgressFeedback {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 47px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .toDoDone,
+    .urgentDateDeadline,
+    .taskBoardProgressFeedback {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        margin: 0 auto;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

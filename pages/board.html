@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/join_logo_grey.svg"
+    />
+
+    <link rel="stylesheet" href="../styles/desktop_template.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/board.css" />
+    <link rel="stylesheet" href="../styles/pop_up_board.css" />
+    <link rel="stylesheet" href="../styles/pop_up_board_edit_task.css" />
+    <link rel="stylesheet" href="../styles/pop_up_board_add_task.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+
+    <script src="../js/board_database.js" defer></script>
+    <script src="../js/database.js" defer></script>
+    <script src="../js/user_database.js" defer></script>
+    <script src="../templates/desktop_template.js"></script>
+    <script src="../templates/board_templates.js" defer></script>
+    <script src="../templates/add_task_template.js" defer></script>
+    <script src="../js/board_render.js" defer></script>
+    <script src="../js/board_subtask.js" defer></script>
+    <script src="../js/board_drop_down.js" defer></script>
+    <script src="../js/board_reset.js" defer></script>
+    <script src="../js/board_move_task_onclick.js" defer></script>
+    <script src="../js/board_drag_and_drop.js" defer></script>
+    <script src="../js/board_filter.js" defer></script>
+    <script src="../js/board.js" defer></script>
+    <script src="../js/add_task_subtask.js"></script>
+    <script src="../js/add_tasks_db.js"></script>
+    <script src="../js/add_tasks.js"></script>
+  </head>
+
+  <body onload="init('board-header', 'board-sidebar', 'board-link')">
+    <div id="board-sidebar" class="left-sidebar"></div>
+
+    <main>
+      <div id="board-header"></div>
+
+      <div id="board-content" class="main-content-wrapper hidden">
+        <section id="board_headline"></section>
+
+        <section>
+          <span class="no-matching-task-found d_none" id="no_matching_task">
+            No matching task found !
+          </span>
+
+          <div class="kanban-board-wrapper">
+            <div
+              class="kanban-column"
+              ondrop="drop(event, 'todo')"
+              ondragover="allowDrop(event)"
+              ondragenter="highlightColumn(event)"
+              ondragleave="unhighlightColumn(event)"
+            >
+              <div class="kanban-header">
+                <h2>To Do</h2>
+                <img
+                  onmouseover="changePlusImage(event)"
+                  onmouseout="changePlusImage(event)"
+                  onclick="openAddTaskPopUp()"
+                  class="kanban-header-img"
+                  src="../assets/img/plus_black.png"
+                  alt="plus"
+                />
+              </div>
+              <div class="kanban-empty-message-wrapper">
+                <div id="to_do_message" class="kanban-empty-message d_none">
+                  No tasks To do
+                </div>
+              </div>
+              <div id="to_do" class="kanban-task-wrapper"></div>
+            </div>
+
+            <div
+              class="kanban-column"
+              ondrop="drop(event, 'in_progress')"
+              ondragover="allowDrop(event)"
+              ondragenter="highlightColumn(event)"
+              ondragleave="unhighlightColumn(event)"
+            >
+              <div class="kanban-header">
+                <h2>In progress</h2>
+                <img
+                  onmouseover="changePlusImage(event)"
+                  onmouseout="changePlusImage(event)"
+                  onclick="openAddTaskPopUp()"
+                  class="kanban-header-img"
+                  src="../assets/img/plus_black.png"
+                  alt="plus"
+                />
+              </div>
+              <div class="kanban-empty-message-wrapper">
+                <div
+                  id="in_progress_message"
+                  class="kanban-empty-message d_none"
+                >
+                  No tasks in progress
+                </div>
+              </div>
+              <div id="in_progress" class="kanban-task-wrapper"></div>
+            </div>
+
+            <div
+              class="kanban-column"
+              ondrop="drop(event, 'await_feedback')"
+              ondragover="allowDrop(event)"
+              ondragenter="highlightColumn(event)"
+              ondragleave="unhighlightColumn(event)"
+            >
+              <div class="kanban-header">
+                <h2>Await feedback</h2>
+                <img
+                  onmouseover="changePlusImage(event)"
+                  onmouseout="changePlusImage(event)"
+                  onclick="openAddTaskPopUp()"
+                  class="kanban-header-img"
+                  src="../assets/img/plus_black.png"
+                  alt="plus"
+                />
+              </div>
+              <div class="kanban-empty-message-wrapper">
+                <div
+                  id="await_feedback_message"
+                  class="kanban-empty-message d_none"
+                >
+                  No tasks awaiting feedback
+                </div>
+              </div>
+              <div id="await_feedback" class="kanban-task-wrapper"></div>
+            </div>
+
+            <div
+              class="kanban-column"
+              ondrop="drop(event, 'done')"
+              ondragover="allowDrop(event)"
+              ondragenter="highlightColumn(event)"
+              ondragleave="unhighlightColumn(event)"
+            >
+              <div class="kanban-header">
+                <h2>Done</h2>
+              </div>
+              <div class="kanban-empty-message-wrapper">
+                <div id="done_message" class="kanban-empty-message d_none">
+                  No tasks done
+                </div>
+              </div>
+              <div id="done" class="kanban-task-wrapper"></div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          onclick=" closePopUps()"
+          id="overlay_task_pop_up"
+          class="overlay-pop-up-board responsive-pop-up-closed"
+        >
+          <div
+            onclick="event.stopPropagation()"
+            id="task_pop_up"
+            class="pop-up-board-wrapper"
+          ></div>
+        </div>
+
+        <section id="edit_task_pop_up" class="d_none"></section>
+
+        <div
+          onclick="closePopUps()"
+          id="overlay_add_task_pop_up"
+          class="overlay-pop-up-add-task responsive-pop-up-closed"
+        >
+          <div
+            onclick="event.stopPropagation()"
+            id="add_task_pop_up"
+            class="pop-up-add-task-wrapper"
+          ></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

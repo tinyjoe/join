@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/join_logo_grey.svg"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+    <link rel="stylesheet" href="../styles/desktop_template.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/contacts.css" />
+    <link rel="stylesheet" href="../styles/add_contact.css" />
+    <link rel="stylesheet" href="../styles/contacts_responsive.css" />
+    <link rel="stylesheet" href="../styles/add_contact_responsive.css" />
+  </head>
+
+  <body
+    onload="initContacts('contact-header', 'contact-sidebar', 'contacts-link')"
+  >
+    <div id="contact-sidebar"></div>
+    <main>
+      <div id="contact-header"></div>
+      <div id="contact-content" class="contacts-content-wrapper hidden">
+        <div
+          id="mobile-contacts-dialog"
+          class="mobile-contacts-dialog hidden"
+        ></div>
+        <div id="contacts-list-container" class="contacts-list-container">
+          <button
+            id="btn-add-contact"
+            class="btn-filled hide-on-mobile"
+            onclick="showAddContactForm(event)"
+          >
+            <p>Add new contact</p>
+            <img src="../assets/icons/person_add.svg" />
+          </button>
+          <div id="contact-list" class="contact-list"></div>
+        </div>
+        <div class="contact-preview-container hide-on-mobile">
+          <div class="contacts-headline">
+            <h2>Contacts</h2>
+            <div class="vl"></div>
+            <p>Better with a team</p>
+          </div>
+          <div id="contacts-info" class="contact-info-container"></div>
+        </div>
+      </div>
+
+      <div class="add-btn-mobile" onclick="showAddContactForm(event)">
+        <img src="../assets/icons/person_add.svg" />
+      </div>
+    </main>
+    <section
+      id="contacts-overlay"
+      class="contacts-overlay hidden"
+      onclick="closeContactForm(event)"
+    ></section>
+    <div id="contacts-dialog" class="contacts-overlay-container"></div>
+    <div id="add-contact-message" class="add-contact-message">
+      <p id="contact-toast-message" class="contacts-info-hl"></p>
+    </div>
+    <script src="../js/database.js"></script>
+    <script src="../js/user_database.js"></script>
+    <script src="../templates/desktop_template.js" defer></script>
+    <script src="../templates/contact_template.js" defer></script>
+    <script src="../js/contacts.js" defer></script>
+    <script src="../js/add_contact.js" defer></script>
+  </body>
+</html>

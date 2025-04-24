@@ -1,0 +1,71 @@
+--root {
+  --primary: #2a3647;
+  --secondary: #29abe2;
+  --hover: #091931;
+  --highlight: #2a3d59;
+  --orange: #ff7a00;
+}
+
+.bg-grey {
+  background-color: #d1d1d1;
+}
+
+.bg-orange {
+  background-color: #ff7a00;
+}
+
+.bg-lila {
+  background-color: #9747ff;
+}
+
+.bg-violet {
+  background-color: #6e52ff;
+}
+
+.bg-pink {
+  background-color: #fc71ff;
+}
+
+.bg-yellow {
+  background-color: #ffbb2b;
+}
+
+.bg-turquoise {
+  background-color: #1fd7c1;
+}
+
+.bg-darkviolet {
+  background-color: #462f8a;
+}
+
+.bg-red {
+  background-color: #ff4646;
+}
+
+.bg-lightblue {
+  background-color: #00bee8;
+}
+
+.bg-coral {
+  background-color: #ff745e;
+}
+
+.bg-blue {
+  background-color: #0038ff;
+}
+
+.bg-darkblue {
+  background-color: #091931;
+}
+
+.text-primary {
+  color: #2a3647;
+}
+
+.text-secondary {
+  color: #29abe2;
+}
+
+.text-grey {
+  color: #a8a8a8;
+}

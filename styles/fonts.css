@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "interbold";
+  src: url("../fonts/inter-bold-webfont.woff2") format("woff2"),
+    url("../fonts/inter-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "intermedium";
+  src: url("../fonts/inter-medium-webfont.woff2") format("woff2"),
+    url("../fonts/inter-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "interregular";
+  src: url("../fonts/inter-regular-webfont.woff2") format("woff2"),
+    url("../fonts/inter-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "interlight";
+  src: url("../fonts/inter-light-webfont.woff2") format("woff2"),
+    url("../fonts/inter-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "interbold";
+  font-size: 61px;
+  margin: 0px;
+}
+
+h3 {
+  font-family: "interbold";
+  font-size: 27px;
+  line-height: 20px;
+}
+
+h4 {
+  font-family: "interlight";
+  font-size: 27px;
+  margin: 0px;
+}
+
+.contacts-headline p {
+  font-family: "interlight";
+  font-size: 27px;
+  color: #2a3647;
+  margin: 0px;
+}
+
+.name-container h3 {
+  font-family: "interregular";
+  font-size: 47px;
+  color: black;
+  margin: 0px;
+}
+
+.contacts-info-hl {
+  font-family: "interregular";
+  font-size: 20px !important;
+  line-height: 24px !important;
+  margin: 0px;
+}
+
+.contacts-info-hl h4 {
+  font-family: "interregular";
+  font-size: 20px !important;
+  line-height: 24px !important;
+  margin: 0px;
+}
+
+.how-to-hl {
+  font-family: "interbold";
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0px;
+}
+
+.btn-filled p {
+  font-family: "interbold";
+  font-size: 21px;
+}
+
+.label {
+  font-family: "interbold";
+  font-size: 16px;
+  color: black;
+  line-height: 19.2px;
+  margin: 0px;
+}
+
+.copy-mail {
+  font-family: "interregular";
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #007cee;
+  margin: 0px;
+}
+
+.copy-text {
+  font-family: "interregular";
+  font-size: 16px;
+  line-height: 19.2px;
+  color: black;
+  margin: 0px;
+}
+
+.header-menu-text {
+  font-family: "interlight";
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #cdcdcd;
+  margin: 0px;
+}
+
+.text-button p {
+  font-family: "interregular";
+  font-size: 16px;
+  margin: 0px;
+}
+
+.small-print {
+  font-family: "interregular";
+  font-size: 16px;
+  margin: 0px;
+}
+
+.small-print a {
+  font-family: "interregular";
+  font-size: 16px;
+  margin: 0px;
+  color: #29abe2;
+}
+
+.small-print a:hover {
+  text-decoration: underline;
+}
+
+.error-text {
+  font-family: "interregular";
+  font-size: 12px;
+  margin: 5px 0px 0px 0px;
+  color: #ff8190;
+}
+
+@media (max-width: 1320px) {
+  h2 {
+    font-size: 55px;
+  }
+
+  h4 {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .name-container h3 {
+    font-size: 40px;
+  }
+
+  .contacts-headline p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  h2 {
+    font-size: 47px;
+  }
+
+  .name-container h3 {
+    font-size: 37px;
+  }
+
+  .contacts-headline p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  .contacts-info-hl {
+    font-size: 16px !important;
+  }
+
+  .copy-mail {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

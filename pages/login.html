@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/join_logo_white.svg"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
+
+    <script src="../js/login.js"></script>
+    <script src="../js/signup.js"></script>
+    <script src="../templates/desktop_template.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/user_database.js"></script>
+  </head>
+  <body onload="rememberUser()">
+    <main>
+      <img class="main-logo" src="../assets/img/join_logo_grey.svg" />
+      <div id="sign-up-info" class="sign-up-info hidden-mobile">
+        <p class="contacts-info-hl">Not a Join user?</p>
+        <button
+          class="btn-filled-small label"
+          onclick="window.location.href='../pages/signup.html'"
+        >
+          Sign up
+        </button>
+      </div>
+      <div id="login-card" class="login-card">
+        <div>
+          <h2>Log in</h2>
+          <hr />
+        </div>
+        <form class="login-form">
+          <div>
+            <div class="icon-input-field">
+              <input
+                id="login-mail"
+                type="email"
+                placeholder="Email"
+                maxlength="30"
+                onkeyup="validateLoginEmail()"
+              />
+              <img class="input-icon" src="../assets/icons/mail-grey.svg" />
+            </div>
+            <p id="login-mail-error" class="error-text hidden">
+              Please enter a valid email address.
+            </p>
+          </div>
+          <div>
+            <div class="icon-input-field">
+              <input
+                id="login-password"
+                type="password"
+                placeholder="Password"
+                onfocus="showVisibilityIcon('login-password-icon')"
+                maxlength="30"
+                minlength="8"
+              />
+              <img
+                id="login-password-icon"
+                class="input-icon"
+                src="../assets/icons/lock.svg"
+                onclick="showPassword('login-password-icon', 'login-password')"
+              />
+            </div>
+            <p id="login-error-message" class="error-text hidden">
+              Check your email and password. Please try again.
+            </p>
+          </div>
+          <div class="input-checkbox" onclick="checkRememberMe()">
+            <img
+              id="remember-checkbox"
+              class="default-cb"
+              src="../assets/icons/default.svg"
+            />
+            <img
+              id="remember-checkbox-hover"
+              class="hover-cb"
+              src="../assets/icons/hover_default.svg"
+            />
+            <p class="small-print">Remember me</p>
+          </div>
+          <div class="login-btn-row">
+            <button
+              type="submit"
+              class="btn-filled-medium"
+              onclick="isValidCredential(event)"
+            >
+              Log in
+            </button>
+            <button
+              type="button"
+              class="btn-outlined-medium"
+              onclick="loginAsGuest()"
+            >
+              Guest Log in
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="sign-up-info hidden-desktop">
+        <p class="contacts-info-hl">Not a Join user?</p>
+        <button
+          class="btn-filled-small label"
+          onclick="window.location.href='../pages/signup.html'"
+        >
+          Sign up
+        </button>
+      </div>
+      <div id="login-legal" class="login-legal">
+        <p
+          class="small-text-button"
+          onclick="navigateToLegalLoggedOut('../pages/privacy_policy.html')"
+        >
+          Privacy Policy
+        </p>
+        <p
+          class="small-text-button"
+          onclick="navigateToLegalLoggedOut('../pages/legal_notice.html')"
+        >
+          Legal notice
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

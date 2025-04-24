@@ -1,0 +1,114 @@
+.priority-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clear-task-button {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 80px
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 125ms ease;
+    height: 56px;
+}
+
+.clear-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: white;
+    color: #000;
+    border-color: #ccc;
+}
+
+.priobtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 125ms ease;
+    gap: 8px;
+    height: 56px;
+    min-width: 120px;
+}
+
+.urgMedLow-btn {
+    background-color: white;
+    color: #000;
+    border-color: #ccc;
+}
+
+.urgMedLow-btn-medium {
+    background-color: white;
+    color: #000;
+    border-color: #ccc;
+}
+
+.urgMedLow-btn:hover,
+.urgMedLow-btn-medium:hover {
+    border-color: #29ABE2;
+    box-shadow: 0 0 5px #29ABE2;
+    transition: all 125ms ease;
+}
+
+.clear-btn:hover {
+    border-color: #29ABE2;
+    color: #29ABE2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clear-btn:hover #cancelIcon {
+    filter: invert(50%) sepia(1) saturate(4) hue-rotate(160deg);
+}
+
+.create-task-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: rgb(42, 54, 71);
+    color: #fff;
+    border-color: #2a3647;
+    background-color: #2a3647 !important;
+}
+
+.create-task-btn:hover {
+    border-color: #29ABE2;
+    box-shadow: 0 0 10px rgba(42, 54, 71, 0.5);
+    background-color: #29ABE2 !important;
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.active-urgent {
+    background-color: #FE3D19;
+    color: white;
+}
+
+.active-medium {
+    background-color: #FFA827;
+    color: white;
+}
+
+.active-low {
+    background-color: #7AE22B;
+    color: white;
+}

@@ -1,0 +1,148 @@
+.selectContactsToAssign {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    height: 38px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.selectContactsToAssign:hover {
+    border-color: #29ABE2;
+    box-shadow: 0 0 5px #29ABE2;
+    transition: all 125ms ease;
+}
+
+.selectContactsToAssign span {
+    font-size: 20px;
+    color: #000;
+    font-family: "Inter", sans-serif;
+}
+
+.selected-contacts-badges-container {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.remaining-contacts-badge {
+    background-color: #ccc;
+    color: #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.remaining-contacts-indicator {
+    color: black;
+    font-size: 16px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #A8A8A8;
+    border-radius: 100%;
+    padding: 7px;
+}
+
+.completeContacts {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0px;
+    cursor: pointer;
+    justify-content: space-between;
+    gap: 10px;
+    height: 30px;
+    transition: background-color 125ms ease, height 125ms ease;
+}
+
+.contact-item.selected {
+    background-color: #2A3647;
+    color: white;
+    border-radius: 10px;
+}
+
+.contact-item.selected .contact-name {
+    color: white;
+    margin-left: -2px;
+}
+
+.contact-item.selected .contact-initials {
+    color: white;
+    border: 2px solid white;
+    margin-left: 13px;
+}
+
+.contact-item:not(.selected):hover {
+    background-color: #D1D1D1;
+    border-radius: 5px;
+}
+
+.contact-item.selected:hover {
+    background-color: #091931;
+}
+
+.contact-item:hover {
+    background-color: #D1D1D1;
+    border-radius: 5px;
+}
+
+.contact-item span:hover {
+    background-color: transparent;
+}
+
+.contact-initials {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.contact-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/img/check-button-contacts-space.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+}

@@ -1,0 +1,297 @@
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.headlineContent {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  gap: 75px;
+}
+
+.userInitial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 3px solid #2a3647;
+  border-radius: 30px;
+  font-family: "interbold";
+  font-size: 24px;
+  color: #29abe2;
+  cursor: pointer;
+}
+
+.userInitial:hover {
+  background-color: #d1d1d1;
+}
+
+.seperator1 {
+  width: 3px;
+  background-color: #29abe2;
+  border: 1px;
+  height: 50px;
+}
+
+.metricsAtGlance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+}
+
+.belowHeadlineContent {
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+  gap: 20px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  width: 560px;
+  height: 562px;
+  gap: 28px;
+}
+
+.left-sidebar {
+  height: 100% !important;
+  min-height: 100vh;
+}
+
+.toDoDone {
+  display: flex;
+  justify-content: space-between;
+  width: 560px;
+  height: 168px;
+}
+
+.To-do,
+.done {
+  display: flex;
+  align-items: center;
+  width: 264px;
+  height: 168px;
+  border-radius: 30px;
+  background-color: white;
+  position: relative;
+  transition: background-color 125ms ease, transform 125ms ease;
+  border-color: #d1d1d1;
+  box-shadow: 0 0 3px #d1d1d1;
+  transition: all 125ms ease;
+  cursor: pointer;
+}
+
+.writeTo-Do,
+.doneOk {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 69px;
+  height: 69px;
+  margin-left: 60px;
+}
+
+.rootPicFrame,
+.hoverPicFrame,
+.rootPicDone,
+.hoverPicDone {
+  position: absolute;
+  width: 69px;
+  height: 69px;
+  transition: opacity 125ms ease, transform 125ms ease;
+}
+
+.rootPicFrame,
+.rootPicDone {
+  opacity: 1;
+}
+
+.hoverPicFrame,
+.hoverPicDone {
+  opacity: 0;
+}
+
+.To-do:hover,
+.done:hover,
+.tasksInBoard:hover,
+.taskInProgress:hover,
+.awaitingFeedback:hover,
+.urgentDateDeadline:hover {
+  background-color: #2a3647;
+  transform: scale(1.05);
+}
+
+.To-do:hover .writeNumberTo-Do,
+.done:hover .writeNumberTo-Do,
+.tasksInBoard:hover,
+.taskInProgress:hover,
+.awaitingFeedback:hover,
+.urgentDateDeadline:hover {
+  color: white;
+}
+
+.To-do:hover .rootPicFrame,
+.done:hover .rootPicDone {
+  opacity: 0;
+}
+
+.To-do:hover .hoverPicFrame,
+.done:hover .hoverPicDone {
+  opacity: 1;
+}
+
+.writeNumberTo-Do {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 20px;
+  transition: color 125ms ease;
+}
+
+.zeroDone {
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.onlyDone {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.onlyUrgent {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.urgentDateDeadline {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 560px;
+  height: 168px;
+  border-radius: 30px;
+  background-color: white;
+  transition: background-color 125ms ease, transform 125ms ease;
+  border-color: #d1d1d1;
+  box-shadow: 0 0 3px #d1d1d1;
+  cursor: pointer;
+}
+
+.urgentSummary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.urgentSummaryPic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+}
+
+.seperator2 {
+  width: 2px;
+  background-color: #d1d1d1;
+  border: 1px;
+  height: 80px;
+}
+
+.upComing-Deadline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 13px;
+  flex: 1;
+}
+
+.dateSummary {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.upComingSummary {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.taskBoardProgressFeedback {
+  display: flex;
+  width: 560px;
+  height: 170px;
+  gap: 28px;
+}
+
+.tasksInBoard,
+.taskInProgress,
+.awaitingFeedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 168px;
+  height: 168px;
+  border-radius: 30px;
+  background-color: white;
+  transition: background-color 125ms ease, transform 125ms ease;
+  border-color: #d1d1d1;
+  box-shadow: 0 0 3px #d1d1d1;
+  transition: all 125ms ease;
+  cursor: pointer;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 385px;
+  height: 136px;
+  margin-left: 40px;
+}
+
+.helloThere {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.times-of-day {
+  font-size: 47px;
+  font-weight: 500;
+}
+
+.name-Of-Guest {
+  font-size: 64px;
+  font-weight: 700;
+  color: #29abe2;
+}
+
+.sepMobile {
+  display: none;
+  height: 3px;
+  width: 100px;
+}

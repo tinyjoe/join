@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/join_logo_grey.svg"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+    <link rel="stylesheet" href="../styles/desktop_template.css" />
+    <link rel="stylesheet" href="../styles/summary.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/summary_responsive.css" />
+
+    <script src="../js/summary.js"></script>
+    <script src="../templates/desktop_template.js"></script>
+    <script src="../js/database.js"></script>
+  </head>
+
+  <body onload="loadData('summary-header', 'summary-sidebar', 'summary-link')">
+    <div id="summary-sidebar"></div>
+    <main>
+      <div id="summary-header"></div>
+      <div id="summary-content" class="main-content-wrapper hidden">
+        <div class="headlineContent">
+          <h1>Join 360</h1>
+          <div class="seperator1"></div>
+          <div class="metricsAtGlance">Key Metrics at a Glance</div>
+          <div class="sepMobile"></div>
+        </div>
+        <div class="belowHeadlineContent">
+          <div class="leftSide">
+            <div class="toDoDone">
+              <a class="To-do" onclick="navigateToBoard()">
+                <div class="writeTo-Do">
+                  <img
+                    class="rootPicFrame"
+                    src="../assets/img/frameWrite.png"
+                    alt="rootPicFrame"
+                  />
+                  <img
+                    class="hoverPicFrame"
+                    src="../assets/img/frameWriteWhite.png"
+                    alt="hoverPicFrame"
+                  />
+                </div>
+                <div class="writeNumberTo-Do">
+                  <div id="taskToDo" class="zeroDone">0</div>
+                  <div class="onlyDone">To-Do</div>
+                </div>
+              </a>
+              <div class="done" onclick="navigateToBoard()">
+                <div class="doneOk">
+                  <img
+                    class="rootPicDone"
+                    src="../assets/img/frameOk.png"
+                    alt="rootPicDone"
+                  />
+                  <img
+                    class="hoverPicDone"
+                    src="../assets/img/frameOkWhite.png"
+                    alt="hoverPicDone"
+                  />
+                </div>
+                <div class="writeNumberTo-Do">
+                  <div id="tasksDoneCount" class="zeroDone">0</div>
+                  <div class="onlyDone">Done</div>
+                </div>
+              </div>
+            </div>
+            <div class="urgentDateDeadline">
+              <div class="urgentSummary" onclick="navigateToBoard()">
+                <div class="urgentSummaryPic">
+                  <img src="../assets/img/urgentSummaryred.png" alt="" />
+                </div>
+                <div>
+                  <div id="urgentCount" class="zeroDone">0</div>
+                  <div class="onlyDone">Urgent</div>
+                </div>
+              </div>
+              <div class="seperator2"></div>
+              <div class="upComing-Deadline" onclick="navigateToBoard()">
+                <div id="nextDate" class="dateSummary">October 16, 2022</div>
+                <div class="upComingSummary">Upcoming Deadline</div>
+              </div>
+            </div>
+            <div class="taskBoardProgressFeedback">
+              <div class="tasksInBoard" onclick="navigateToBoard()">
+                <div id="taskInBoardCount" class="zeroDone">0</div>
+                <div class="onlyDone">Tasks in<br />Board</div>
+              </div>
+              <div class="taskInProgress" onclick="navigateToBoard()">
+                <div id="taskInProg" class="zeroDone">0</div>
+                <div class="onlyDone">Tasks in<br />Progress</div>
+              </div>
+              <div class="awaitingFeedback" onclick="navigateToBoard()">
+                <div id="tasksAwaitingCount" class="zeroDone">0</div>
+                <div class="onlyDone">Awaiting<br />Feedback</div>
+              </div>
+            </div>
+          </div>
+          <div class="rightSide">
+            <div class="helloThere">
+              <div id="greeting" class="times-of-day">Good Morning</div>
+              <div id="userName" class="name-Of-Guest">Sofia Müller</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

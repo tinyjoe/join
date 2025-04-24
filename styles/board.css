@@ -1,0 +1,507 @@
+body {
+  display: flex;
+  margin: 0px auto;
+  min-height: 100vh !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: rgb(246, 247, 248);
+  font-family: "Inter", sans-serif;
+}
+
+.headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 56px;
+  padding: 0px 48px;
+}
+
+h1 {
+  font-size: 73px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0px;
+  font-size: 20px;
+}
+
+h3 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+label {
+  display: flex;
+  color: #2a3647;
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d-none {
+  display: none;
+}
+
+.searchbox-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 48px;
+  cursor: pointer;
+}
+
+.searchbox-wrapper-responsive {
+  display: flex;
+}
+
+.searchbox-input {
+  width: 312px;
+  border-radius: 10px;
+  border: 1px solid rgb(170 170 170);
+  cursor: pointer;
+  transition: 0.5s;
+  outline: none;
+  padding: 12px 21px;
+  padding-right: 50px;
+  font-size: 20px;
+  padding-left: 16px;
+}
+
+.searchbox-input:focus {
+  border: 1px solid rgb(41, 171, 226);
+}
+
+::placeholder {
+  color: rgb(213, 212, 212);
+  opacity: 1;
+}
+
+.no-matching-task-found {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+  color: rgb(41, 171, 226);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.input-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 50px;
+  border-radius: 0px;
+  border: none;
+  background: none;
+  border-left: 1px solid rgb(170 170 170);
+  margin: 9px 0px;
+}
+
+.input-btn-img:hover {
+  cursor: pointer;
+  background-color: rgb(246, 247, 248);
+  border-radius: 100px;
+}
+
+.add-task-btn {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: rgb(42, 54, 71);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-task-btn:hover {
+  background-color: rgb(41, 171, 226);
+  box-shadow: 0px 4px 4px 0px rgb(170 170 170);
+}
+
+.add-task-btn-img {
+  background: none;
+  width: 25px;
+  height: 25px;
+}
+
+.kanban-board-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 0px 34px;
+  max-height: 80vh; 
+}
+
+.kanban-column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-height: 70vh; 
+}
+
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(66, 82, 110);
+  margin-bottom: 16px;
+  padding: 0px 16px;
+}
+
+.kanban-header-img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.kanban-header-img:hover {
+  transition: transform 0.5s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.kanban-task-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  cursor: pointer;
+  overflow: scroll;
+  scrollbar-width: auto;
+}
+
+.task {
+  transition: transform 0.5s;
+}
+
+.dragged {
+  transform: rotate(5deg);
+  border: 2px solid rgb(41, 171, 226);
+}
+
+.highlight-column {
+  background-color: rgb(41, 171, 226, 0.3);
+  border-radius: 10px;
+  padding: 16px 0px;
+  transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+.kanban-task {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: rgb(255, 255, 255);
+  padding: 16px;
+  gap: 24px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.kanban-task:active {
+  cursor: grabbing;
+}
+
+.kanban-task-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 113px;
+  height: 27px;
+  background-color: rgb(0, 56, 255);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 16px;
+}
+
+.task-title h3 {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1;
+}
+
+.kanban-task-description {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  hyphens: auto;
+  color: #a8a8a8;
+}
+
+.kanban-task-subtasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+progress {
+  width: 150px;
+}
+
+.subtasks-counter {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.kanban-task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.asignees-profil {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 16px;
+}
+
+.initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 32px;
+  width: 32px;
+  border: 1px solid white;
+  border-radius: 45px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: -5px;
+}
+
+.kanban-empty-message-wrapper {
+  display: flex;
+  padding: 0px 16px;
+}
+
+.kanban-empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 48px;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 10px;
+  border: dotted rgb(168, 168, 168);
+  color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+
+nav {
+  position: sticky;
+  bottom: 0px;
+  background-color: rgb(42, 54, 71);
+  height: 80px;
+}
+
+.navbar-links-responsive {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #b5b6b9;
+  gap: 4px;
+  padding: 15px;
+}
+
+.navbar-links:hover {
+  color: white;
+  background-color: rgb(57, 74, 95);
+  filter: brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+.navbar-icons {
+  width: 24px;
+  height: 24px;
+}
+
+.headline-responsive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.searchbox-input-responsive {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(170 170 170);
+  cursor: pointer;
+  transition: 0.5s;
+  outline: none;
+  padding: 12px 21px;
+  font-size: 20px;
+  padding-left: 16px;
+  box-sizing: border-box;
+  margin: 16px 0px;
+}
+
+.input-btn-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 58px;
+  top: 250px;
+  border-radius: 0px;
+  border: none;
+  background: none;
+  border-left: 1px solid rgb(170 170 170);
+  margin: 9px 0px;
+}
+
+.add-task-btn-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(42, 54, 71);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.add-task-btn-responsive:hover {
+  background-color: rgb(41, 171, 226);
+  box-shadow: 0px 4px 4px 0px rgb(170 170 170);
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 1440px) {
+  .main-content-wrapper {
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 1490px) {
+  .kanban-board-wrapper {
+    gap: 24px;
+  }
+
+  .kanban-board-wrapper {
+    flex-wrap: wrap;
+  }
+  .main-content-wrapper {
+    width: 100%;
+  }
+
+  .left-sidebar {
+    bottom: 0px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .add-task-btn {
+    display: none;
+  }
+
+  .app-description {
+    display: none;
+  }
+
+  .header-profil-icon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 770px) {
+  .headline {
+    display: none;
+  }
+
+  .headline-responsive-wrapper {
+    padding: 0px 16px;
+  }
+  .main-content-wrapper {
+    padding: 0px 0px;
+  }
+
+  .kanban-board-wrapper {
+    padding: 0px 0px;
+  }
+
+  .input-btn-responsive {
+    top: 14px;
+    right: 43px;
+    position: relative;
+    height: 35px;
+  }
+}
+
+@media (max-width: 700px) {
+  .kanban-column {
+    width: 100%;
+  }
+
+  .navbar-links {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  progress {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1130px) {
+  .add-task-btn-responsive {
+    display: none;
+  }
+
+  .join-logo-responsive {
+    display: none;
+    width: 32px;
+    height: 39px;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (min-width: 770px) {
+  .headline-responsive {
+    display: none;
+  }
+
+  .input-btn-responsive {
+    display: none;
+  }
+
+  .searchbox-input-responsive {
+    display: none;
+  }
+}

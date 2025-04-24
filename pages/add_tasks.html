@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/join_logo_grey.svg"
+    />
+    <link rel="stylesheet" href="../styles/add_task.css" />
+    <link rel="stylesheet" href="../styles/desktop_template.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/color.css" />
+    <link rel="stylesheet" href="../styles/add_task_responsive.css" />
+    <link rel="stylesheet" href="../styles/add_task_dropdown.css" />
+    <link rel="stylesheet" href="../styles/add_task_btn.css" />
+    <link rel="stylesheet" href="../styles/add_task_contact.css" />
+    <link rel="stylesheet" href="../styles/add_task_input.css" />
+    <link rel="stylesheet" href="../styles/add_task_subtask.css" />
+
+    <script src="../templates/desktop_template.js"></script>
+    <script src="../js/add_tasks.js"></script>
+    <script src="../templates/add_task_template.js"></script>
+    <script src="../js/add_tasks_db.js"></script>
+    <script src="../js/add_task_subtask.js"></script>
+  </head>
+
+  <body onload="init('add-task-header', 'add-task-sidebar', 'add-task-link')">
+    <div id="add-task-sidebar"></div>
+    <main>
+      <div id="add-task-header"></div>
+      <div id="add-task-content" class="main-content-wrapper hidden">
+        <div class="addTaskContent">
+          <div>
+            <h1>Add Task</h1>
+          </div>
+          <div class="bothSides">
+            <div class="leftSide">
+              <div class="inputStyle">
+                <span for="inputField"
+                  >Title<span class="required-asterisk">*</span></span
+                >
+                <input
+                  type="text"
+                  id="inputFieldTitle"
+                  placeholder="Enter a title"
+                  class="titleInput"
+                  oninput="checkForm()"
+                />
+              </div>
+              <div class="inputStyle">
+                <span for="inputField">Description</span>
+                <textarea
+                  id="inputFieldDescription"
+                  placeholder="Enter a Description"
+                  class="titleInputDescription"
+                ></textarea>
+              </div>
+              <div class="inputStyle">
+                <span class="assignedToSpanStyle" for="inputField"
+                  >Assigned to</span
+                >
+                <div
+                  id="selectOnes"
+                  class="selectContactsToAssign"
+                  onclick="toggleContactDropdown()"
+                >
+                  <span id="selectedContacts" name="assignedContactsDisplay"
+                    >Select contacts to assign</span
+                  >
+                  <img
+                    id="dropdownArrow2"
+                    src="../assets/img/arrow_drop_downaa.png"
+                    class="dropdown-arrow"
+                  />
+                  <div class="category-dropdown" id="categoryDropdown2"></div>
+                </div>
+                <div class="completeContacts">
+                  <div
+                    id="selectedContactsBadges"
+                    class="selected-contacts-badges-container"
+                  ></div>
+                  <div class="maxContacts"></div>
+                </div>
+              </div>
+            </div>
+            <div class="seperator1"></div>
+            <div class="rightSide">
+              <div class="inputStyle">
+                <span for="inputField"
+                  >Due date<span class="required-asterisk">*</span></span
+                >
+                <input
+                  type="date"
+                  id="inputFieldDueDate"
+                  class="titleInput"
+                  oninput="checkForm()"
+                />
+              </div>
+              <div class="priorityStyle">
+                <span for="inputField">Prio</span>
+                <div class="priority-button">
+                  <button
+                    id="inputFieldUrgent"
+                    class="priobtn urgMedLow-btn"
+                    onclick="setPriority(this, 'urgent')"
+                  >
+                    Urgent
+                    <img src="../assets/img/urgent.png" class="priority-icon" />
+                  </button>
+                  <button
+                    id="inputFieldMedium"
+                    class="priobtn urgMedLow-btn-medium"
+                    onclick="setPriority(this, 'medium')"
+                  >
+                    Medium
+                    <img
+                      src="../assets/img/medium21.png"
+                      class="priority-icon"
+                    />
+                  </button>
+                  <button
+                    id="inputFieldLow"
+                    class="priobtn urgMedLow-btn"
+                    onclick="setPriority(this, 'low')"
+                  >
+                    Low
+                    <img src="../assets/img/low.png" class="priority-icon" />
+                  </button>
+                </div>
+              </div>
+              <div class="inputStyle">
+                <span class="spanCategoryStyle" for="inputField"
+                  >Category<span class="required-asterisk">*</span></span
+                >
+                <div
+                  id="selectCat"
+                  class="selectCategory"
+                  onclick="toggleDropdown(event)"
+                >
+                  <span id="selectedCategory">Select task category</span>
+                  <img
+                    id="dropdownArrow"
+                    src="../assets/img/arrow_drop_downaa.png"
+                    class="dropdown-arrow"
+                  />
+                  <div class="category-dropdown" id="categoryDropdown">
+                    <span onclick="selectCategory('Technical Task')"
+                      >Technical Task</span
+                    >
+                    <span onclick="selectCategory('User Story')"
+                      >User Story</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="inputStyle">
+                <span class="SubtaskSpanStyle" for="inputField">Subtasks</span>
+                <div class="subtaskInputWrapper">
+                  <input
+                    type="text"
+                    id="inputFieldSubtask"
+                    placeholder="Add new subtask"
+                    class="subtaskInput"
+                  />
+                  <div class="iconWrapper" id="iconWrapper">
+                    <img
+                      src="../assets/img/Propertyadd.png"
+                      id="actionIcon"
+                      class="icon"
+                      onclick="addSubtask()"
+                    />
+                  </div>
+                </div>
+                <div id="subtaskList" class="subtaskList">
+                  <!-- Subtask-Elemente werden hier dynamisch hinzugefügt -->
+                </div>
+              </div>
+              <div>
+                <div class="clear-task-button">
+                  <button class="btn clear-btn" onclick="clearEverything()">
+                    Clear
+                    <img
+                      id="cancelIcon"
+                      src="../assets/img/iconoir_cancel.png"
+                      alt="Cancel Icon"
+                    />
+                  </button>
+                  <button
+                    id="createTaskBtn"
+                    class="btn create-task-btn"
+                    onclick="createTask()"
+                    disabled
+                  >
+                    Create Task
+                    <img
+                      id="checkIcon"
+                      src="../assets/img/check_white.png"
+                      alt="Check Icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="mobileSpanStyle"
+            style="color: black; position: relative"
+          >
+            <span style="position: absolute; left: -5px; top: -7px; color: red"
+              >*</span
+            >
+            This Field is required
+          </span>
+        </div>
+      </div>
+    </main>
+    <div class="showMe d-none">
+      Task Added To Board
+      <img src="../assets/img/board.png" alt="" />
+    </div>
+  </body>
+  <script src="../js/database.js"></script>
+</html>
