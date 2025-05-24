@@ -33,7 +33,7 @@ function introAnimationDesktop() {
   const logo = document.getElementById("intro-logo");
   logo.addEventListener("animationend", (event) => {
     if (event.animationName === "fadeOut") {
-      window.location.href = "../pages/login.html";
+      window.location.href = "pages/login.html";
     }
   });
 }
@@ -45,7 +45,7 @@ function introAnimationMobile() {
   const mobileLogo = document.getElementById("intro-mobile-logo");
   mobileLogo.addEventListener("animationend", (event) => {
     if (event.animationName === "fadeOut") {
-      window.location.href = "../pages/login.html";
+      window.location.href = "pages/login.html";
     }
   });
 }
